@@ -35,6 +35,9 @@
             TxtBuscar = new TextBox();
             LblBusqueda = new Label();
             PnlDatos = new Panel();
+            CBEditorial = new ComboBox();
+            CBAutor = new ComboBox();
+            textTitulo = new TextBox();
             label2 = new Label();
             TextUnidades = new TextBox();
             TextAño = new TextBox();
@@ -52,15 +55,12 @@
             BtnEditar = new Button();
             BtnGuardar = new Button();
             BtnNuevo = new Button();
-            dataGridView1 = new DataGridView();
-            textTitulo = new TextBox();
-            CBAutor = new ComboBox();
-            CBEditorial = new ComboBox();
+            DgLibros = new DataGridView();
             Pnltitulo.SuspendLayout();
             PnlBusqueda.SuspendLayout();
             PnlDatos.SuspendLayout();
             BtnBotones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DgLibros).BeginInit();
             SuspendLayout();
             // 
             // Pnltitulo
@@ -149,6 +149,34 @@
             PnlDatos.Name = "PnlDatos";
             PnlDatos.Size = new Size(1344, 235);
             PnlDatos.TabIndex = 2;
+            // 
+            // CBEditorial
+            // 
+            CBEditorial.Font = new Font("Showcard Gothic", 8.773584F, FontStyle.Bold);
+            CBEditorial.FormattingEnabled = true;
+            CBEditorial.Location = new Point(470, 89);
+            CBEditorial.Name = "CBEditorial";
+            CBEditorial.Size = new Size(470, 25);
+            CBEditorial.TabIndex = 17;
+            // 
+            // CBAutor
+            // 
+            CBAutor.Font = new Font("Simple Bold Jut Out", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            CBAutor.FormattingEnabled = true;
+            CBAutor.Location = new Point(470, 64);
+            CBAutor.Name = "CBAutor";
+            CBAutor.Size = new Size(470, 26);
+            CBAutor.TabIndex = 16;
+            // 
+            // textTitulo
+            // 
+            textTitulo.BorderStyle = BorderStyle.None;
+            textTitulo.Font = new Font("Simple Bold Jut Out", 8.150944F);
+            textTitulo.Location = new Point(470, 42);
+            textTitulo.Multiline = true;
+            textTitulo.Name = "textTitulo";
+            textTitulo.Size = new Size(470, 24);
+            textTitulo.TabIndex = 15;
             // 
             // label2
             // 
@@ -339,50 +367,22 @@
             BtnNuevo.Text = "NUEVO";
             BtnNuevo.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DgLibros
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(205, 584);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 45;
-            dataGridView1.Size = new Size(1014, 143);
-            dataGridView1.TabIndex = 4;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // textTitulo
-            // 
-            textTitulo.BorderStyle = BorderStyle.None;
-            textTitulo.Font = new Font("Simple Bold Jut Out", 8.150944F);
-            textTitulo.Location = new Point(470, 42);
-            textTitulo.Multiline = true;
-            textTitulo.Name = "textTitulo";
-            textTitulo.Size = new Size(470, 24);
-            textTitulo.TabIndex = 15;
-            // 
-            // CBAutor
-            // 
-            CBAutor.Font = new Font("Simple Bold Jut Out", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 178);
-            CBAutor.FormattingEnabled = true;
-            CBAutor.Location = new Point(470, 64);
-            CBAutor.Name = "CBAutor";
-            CBAutor.Size = new Size(470, 26);
-            CBAutor.TabIndex = 16;
-            // 
-            // CBEditorial
-            // 
-            this.CBEditorial.Font = new Font("Showcard Gothic", 8.773584F, FontStyle.Bold);
-            this.CBEditorial.FormattingEnabled = true;
-            this.CBEditorial.Location = new Point(470, 89);
-            this.CBEditorial.Name = "CBEditorial";
-            this.CBEditorial.Size = new Size(470, 25);
-            this.CBEditorial.TabIndex = 17;
+            DgLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DgLibros.Location = new Point(205, 584);
+            DgLibros.Name = "DgLibros";
+            DgLibros.RowHeadersWidth = 45;
+            DgLibros.Size = new Size(1014, 143);
+            DgLibros.TabIndex = 4;
+            DgLibros.CellContentClick += dataGridView1_CellContentClick;
             // 
             // FormLibros
             // 
             AutoScaleDimensions = new SizeF(106F, 106F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(1344, 727);
-            Controls.Add(dataGridView1);
+            Controls.Add(DgLibros);
             Controls.Add(BtnBotones);
             Controls.Add(PnlDatos);
             Controls.Add(PnlBusqueda);
@@ -391,7 +391,7 @@
             ForeColor = Color.WhiteSmoke;
             Margin = new Padding(11, 6, 11, 6);
             Name = "FormLibros";
-            Text = "FormLibros";
+            Text = " ";
             Load += FormLibros_Load;
             Pnltitulo.ResumeLayout(false);
             Pnltitulo.PerformLayout();
@@ -400,7 +400,7 @@
             PnlDatos.ResumeLayout(false);
             PnlDatos.PerformLayout();
             BtnBotones.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DgLibros).EndInit();
             ResumeLayout(false);
         }
 
@@ -426,7 +426,7 @@
         private Button BtnEditar;
         private Button BtnGuardar;
         private Button BtnNuevo;
-        private DataGridView dataGridView1;
+        private DataGridView DgLibros;
         private TextBox TextUnidades;
         private TextBox TextAño;
         private TextBox TextCategoria;

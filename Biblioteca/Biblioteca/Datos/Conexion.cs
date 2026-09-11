@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.Data.SqlClient;
 
 namespace Biblioteca.Datos
 {
-    internal class Conexion
+    public class Conexion
     {
+        private string CadenaConexion =
+            "Server=(localdb)\\MSSQLLocalDB;Database=Biblioteca;Integrated security=True;TrustServerCertificate=True;";
+        public SqlConnection ObtenerConexion()
+        {
+            return new SqlConnection(CadenaConexion);
+        }
     }
 }
