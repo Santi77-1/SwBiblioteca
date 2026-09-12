@@ -12,7 +12,6 @@ namespace Biblioteca
 {
     public partial class FormLibros : Form
     {
-        private bool modoEdition = false;
         public FormLibros()
         {
             InitializeComponent();
@@ -265,7 +264,7 @@ namespace Biblioteca
                     return;
                 }
 
-                int anio, Existencias;
+                int anio , Existencias;
 
                 if (!int.TryParse(TextAnio.Text, out anio))
                 {
@@ -327,177 +326,6 @@ namespace Biblioteca
             {
                 MessageBox.Show(
                     "Error al guardar el libro:\n " + ex.Message,
-                    "Biblioteca",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-            }
-        }
-        private void BtnCancelar_Click(object sender, EventArgs e)
-        {
-            TextIsbn.Clear();
-            textTitulo.Clear();
-            TextCategoria.Clear();
-            TextAnio.Clear();
-            TextUnidades.Clear();
-            CBAutor.SelectedIndex = -1;
-            CBEditorial.SelectedIndex = -1;
-
-            modoEdition = false;
-
-        }
-        private void BtnEditar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (string.IsNullOrWhiteSpace(TextIsbn.Text) ||
-                    string.IsNullOrWhiteSpace(TextIsbn.Text) ||
-                    string.IsNullOrWhiteSpace(textTitulo.Text) ||
-                    string.IsNullOrWhiteSpace(TextCategoria.Text) ||
-                    string.IsNullOrWhiteSpace(TextAnio.Text) ||
-                    string.IsNullOrWhiteSpace(TextUnidades.Text) ||
-                    CBAutor.SelectedIndex == -1 ||
-                    CBEditorial.SelectedIndex == -1
-                    )
-                {
-                    MessageBox.Show(
-                        "Complete todos los campos antes de guardar.",
-                        "Biblioteca",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-                    return;
-
-                }
-                int anio, Existencias;
-
-                if (!int.TryParse(TextAnio.Text, out anio))
-                {
-                    MessageBox.Show(
-                        "El año debe ser un numero entero.",
-                        "Biblioteca",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-                    return;
-                }
-                if (!int.TryParse(TextUnidades.Text, out Existencias))
-                {
-                    MessageBox.Show(
-                        "Las existencias deben ser un numero entero.",
-                        "Biblioteca",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-                    return;
-                }
-
-                Conexion conexion = new Conexion();
-                using (SqlConnection cn = conexion.ObtenerConexion())
-                {
-                    cn.Open();
-                    string consulta = "UPDATE LIBROS SET " +
-                        "Titulo = @Titulo, " +
-                        "Categoria = @Categoria, " +
-                        "Anio = @Anio, " +
-                        "Existencias = @Existencias, " +
-                        "Id_Autores = @Id_Autores, " +
-                        "Id_Editorial = @Id_Editorial " +
-                        "WHERE ISBN = @ISBN";
-                    using (SqlCommand comando = new SqlCommand(consulta, cn))
-                    {
-                        comando.Parameters.AddWithValue("@ISBN", TextIsbn.Text.Trim());
-                        comando.Parameters.AddWithValue("@Titulo", textTitulo.Text.Trim());
-                        comando.Parameters.AddWithValue("@Categoria", TextCategoria.Text.Trim());
-                        comando.Parameters.AddWithValue("@Anio", anio);
-                        comando.Parameters.AddWithValue("@Existencias", Existencias);
-                        comando.Parameters.AddWithValue("@Id_Autores", Convert.ToInt32(CBAutor.SelectedValue));
-                        comando.Parameters.AddWithValue("@Id_Editorial", Convert.ToInt32(CBEditorial.SelectedValue));
-
-                        comando.ExecuteNonQuery();
-                    }
-                }
-
-                MessageBox.Show(
-                    "Libro actualizado correctamente.",
-                    "Biblioteca",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-
-                Cargar_libros();
-                BtnCancelar_Click(null, null);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "Error al actualizar el libro:\n " + ex.Message,
-                    "Biblioteca",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-            }
-
-        }
-
-        private void BtnEliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (DgLibros.CurrentRow == null)
-                {
-                    MessageBox.Show(
-                        "Seleccione un libro para eliminar.",
-                        "Biblioteca",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Warning
-                    );
-                    return;
-                }
-
-                string isbn = DgLibros.CurrentRow.Cells["ISBN"].Value.ToString();
-
-                DialogResult resultado = MessageBox.Show(
-                    "¿Está seguro de que desea eliminar este libro?",
-                    "Biblioteca",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                );
-                
-                if (resultado == DialogResult.No)
-                {
-                    return;
-                }
-
-                Conexion conexion = new Conexion();
-
-                using (SqlConnection cn = conexion.ObtenerConexion())
-                {
-                    cn.Open();
-                    string consulta = "DELETE FROM LIBROS WHERE ISBN = @ISBN";
-                    using (SqlCommand comando = new SqlCommand(consulta, cn))
-                    {
-                        comando.Parameters.AddWithValue("@ISBN", isbn);
-                        comando.ExecuteNonQuery();
-                    }
-                }
-
-                MessageBox.Show(
-                    "Libro eliminado correctamente.",
-                    "Biblioteca",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information
-                );
-                modoEdition = false;
-                TextIsbn.Enabled = true;
-
-                Cargar_libros();
-                BtnNuevo_Click(null, null);
-            }
-            catch
-            {
-                MessageBox.Show(
-                    "Error al eliminar el libro.",
                     "Biblioteca",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error

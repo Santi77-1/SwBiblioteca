@@ -1,3 +1,5 @@
+using Biblioteca.Datos;
+
 namespace Biblioteca
 {
     public partial class FormPrincipal : Form
@@ -5,6 +7,7 @@ namespace Biblioteca
         public FormPrincipal()
         {
             InitializeComponent();
+            Open_Form(new FormInicio());// Abre el formulario de inicio al iniciar la aplicación
         }
 
         private void Open_Form(Form formulario)// Método para abrir un formulario dentro del panel PnlContenido

@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             Pnltitulo = new Panel();
             LblGl = new Label();
             PnlBusqueda = new Panel();
@@ -40,7 +44,7 @@
             textTitulo = new TextBox();
             label2 = new Label();
             TextUnidades = new TextBox();
-            TextAño = new TextBox();
+            TextAnio = new TextBox();
             TextCategoria = new TextBox();
             TextIsbn = new TextBox();
             TxtUnidades = new Label();
@@ -107,6 +111,7 @@
             BtnBuscar.TabIndex = 2;
             BtnBuscar.Text = "BUSCAR";
             BtnBuscar.UseVisualStyleBackColor = false;
+            BtnBuscar.Click += BtnBuscar_Click;
             // 
             // TxtBuscar
             // 
@@ -135,7 +140,7 @@
             PnlDatos.Controls.Add(textTitulo);
             PnlDatos.Controls.Add(label2);
             PnlDatos.Controls.Add(TextUnidades);
-            PnlDatos.Controls.Add(TextAño);
+            PnlDatos.Controls.Add(TextAnio);
             PnlDatos.Controls.Add(TextCategoria);
             PnlDatos.Controls.Add(TextIsbn);
             PnlDatos.Controls.Add(TxtUnidades);
@@ -152,11 +157,11 @@
             // 
             // CBEditorial
             // 
-            CBEditorial.Font = new Font("Showcard Gothic", 8.773584F, FontStyle.Bold);
+            CBEditorial.Font = new Font("Simple Bold Jut Out", 8.830189F, FontStyle.Regular, GraphicsUnit.Point, 178);
             CBEditorial.FormattingEnabled = true;
             CBEditorial.Location = new Point(470, 89);
             CBEditorial.Name = "CBEditorial";
-            CBEditorial.Size = new Size(470, 25);
+            CBEditorial.Size = new Size(470, 27);
             CBEditorial.TabIndex = 17;
             // 
             // CBAutor
@@ -200,16 +205,16 @@
             TextUnidades.Size = new Size(470, 24);
             TextUnidades.TabIndex = 12;
             // 
-            // TextAño
+            // TextAnio
             // 
-            TextAño.BorderStyle = BorderStyle.None;
-            TextAño.Font = new Font("Simple Bold Jut Out", 8.150944F);
-            TextAño.Location = new Point(470, 138);
-            TextAño.Multiline = true;
-            TextAño.Name = "TextAño";
-            TextAño.Size = new Size(470, 24);
-            TextAño.TabIndex = 11;
-            TextAño.Text = " ";
+            TextAnio.BorderStyle = BorderStyle.None;
+            TextAnio.Font = new Font("Simple Bold Jut Out", 8.150944F);
+            TextAnio.Location = new Point(470, 138);
+            TextAnio.Multiline = true;
+            TextAnio.Name = "TextAnio";
+            TextAnio.Size = new Size(470, 24);
+            TextAnio.TabIndex = 11;
+            TextAnio.Text = " ";
             // 
             // TextCategoria
             // 
@@ -322,6 +327,7 @@
             BtnCancelar.TabIndex = 4;
             BtnCancelar.Text = "CANCELAR";
             BtnCancelar.UseVisualStyleBackColor = true;
+            BtnCancelar.Click += BtnCancelar_Click;
             // 
             // BtnEliminar
             // 
@@ -333,6 +339,7 @@
             BtnEliminar.TabIndex = 3;
             BtnEliminar.Text = "ELIMINAR";
             BtnEliminar.UseVisualStyleBackColor = true;
+            BtnEliminar.Click += BtnEliminar_Click;
             // 
             // BtnEditar
             // 
@@ -344,6 +351,7 @@
             BtnEditar.TabIndex = 2;
             BtnEditar.Text = "EDITAR";
             BtnEditar.UseVisualStyleBackColor = true;
+            BtnEditar.Click += BtnEditar_Click;
             // 
             // BtnGuardar
             // 
@@ -355,6 +363,7 @@
             BtnGuardar.TabIndex = 1;
             BtnGuardar.Text = "GUARDAR";
             BtnGuardar.UseVisualStyleBackColor = true;
+            BtnGuardar.Click += BtnGuardar_Click;
             // 
             // BtnNuevo
             // 
@@ -366,16 +375,48 @@
             BtnNuevo.TabIndex = 0;
             BtnNuevo.Text = "NUEVO";
             BtnNuevo.UseVisualStyleBackColor = true;
+            BtnNuevo.Click += BtnNuevo_Click;
             // 
             // DgLibros
             // 
+            DgLibros.AccessibleRole = AccessibleRole.None;
+            DgLibros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            DgLibros.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DgLibros.BackgroundColor = Color.WhiteSmoke;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Simple Bold Jut Out", 10.7735844F, FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            DgLibros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             DgLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DgLibros.Location = new Point(205, 584);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.Font = new Font("Simple Bold Jut Out", 10.18868F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            dataGridViewCellStyle2.ForeColor = Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            DgLibros.DefaultCellStyle = dataGridViewCellStyle2;
+            DgLibros.Location = new Point(211, 465);
             DgLibros.Name = "DgLibros";
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Simple Bold Jut Out", 10.7735844F, FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            DgLibros.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             DgLibros.RowHeadersWidth = 45;
-            DgLibros.Size = new Size(1014, 143);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            DgLibros.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            DgLibros.Size = new Size(982, 250);
             DgLibros.TabIndex = 4;
             DgLibros.CellContentClick += dataGridView1_CellContentClick;
+            DgLibros.CellMouseDoubleClick += Cargar_Libro_Seleccionado;
             // 
             // FormLibros
             // 
@@ -428,7 +469,7 @@
         private Button BtnNuevo;
         private DataGridView DgLibros;
         private TextBox TextUnidades;
-        private TextBox TextAño;
+        private TextBox TextAnio;
         private TextBox TextCategoria;
         private TextBox TextAutor;
         private TextBox TextEditorial;
