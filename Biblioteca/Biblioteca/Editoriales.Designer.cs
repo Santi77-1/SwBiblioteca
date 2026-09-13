@@ -1,6 +1,6 @@
 ﻿namespace Biblioteca
 {
-    partial class FormAutores
+    partial class FormEditoriales
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             panel1 = new Panel();
             LblGl = new Label();
             panel2 = new Panel();
             TXId = new TextBox();
-            TXApellido = new TextBox();
             LblNombre = new Label();
             TXNombre = new TextBox();
-            LblApellido = new Label();
             panel3 = new Panel();
-            DGAutores = new DataGridView();
+            DGEditoriales = new DataGridView();
             BtnBotones = new Panel();
             BtnCancelar = new Button();
             BtnGuardar = new Button();
@@ -49,7 +47,7 @@
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)DGAutores).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGEditoriales).BeginInit();
             BtnBotones.SuspendLayout();
             SuspendLayout();
             // 
@@ -70,18 +68,17 @@
             LblGl.ForeColor = SystemColors.ButtonHighlight;
             LblGl.Location = new Point(477, 16);
             LblGl.Name = "LblGl";
-            LblGl.Size = new Size(439, 50);
+            LblGl.Size = new Size(508, 50);
             LblGl.TabIndex = 1;
-            LblGl.Text = "GESTION DE AUTORES";
+            LblGl.Text = "GESTION DE EDITORIALES";
+            LblGl.Click += LblGl_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.White;
             panel2.Controls.Add(TXId);
-            panel2.Controls.Add(TXApellido);
             panel2.Controls.Add(LblNombre);
             panel2.Controls.Add(TXNombre);
-            panel2.Controls.Add(LblApellido);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 83);
             panel2.Name = "panel2";
@@ -98,17 +95,6 @@
             TXId.Name = "TXId";
             TXId.Size = new Size(35, 24);
             TXId.TabIndex = 20;
-            // 
-            // TXApellido
-            // 
-            TXApellido.BorderStyle = BorderStyle.None;
-            TXApellido.Font = new Font("Palatino Linotype", 8.830189F, FontStyle.Bold);
-            TXApellido.Location = new Point(518, 79);
-            TXApellido.Multiline = true;
-            TXApellido.Name = "TXApellido";
-            TXApellido.Size = new Size(470, 24);
-            TXApellido.TabIndex = 19;
-            TXApellido.TextChanged += TXApellido_TextChanged;
             // 
             // LblNombre
             // 
@@ -131,21 +117,10 @@
             TXNombre.Size = new Size(470, 24);
             TXNombre.TabIndex = 17;
             // 
-            // LblApellido
-            // 
-            LblApellido.AutoSize = true;
-            LblApellido.Font = new Font("Verdana", 8.830189F, FontStyle.Italic);
-            LblApellido.ForeColor = Color.Black;
-            LblApellido.Location = new Point(363, 87);
-            LblApellido.Name = "LblApellido";
-            LblApellido.Size = new Size(68, 16);
-            LblApellido.TabIndex = 16;
-            LblApellido.Text = "APELLIDO";
-            // 
             // panel3
             // 
             panel3.BackColor = Color.MintCream;
-            panel3.Controls.Add(DGAutores);
+            panel3.Controls.Add(DGEditoriales);
             panel3.Controls.Add(BtnBotones);
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(0, 232);
@@ -153,45 +128,45 @@
             panel3.Size = new Size(1350, 733);
             panel3.TabIndex = 2;
             // 
-            // DGAutores
+            // DGEditoriales
             // 
-            DGAutores.AccessibleRole = AccessibleRole.None;
-            DGAutores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            DGAutores.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            DGAutores.BackgroundColor = Color.PeachPuff;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Simple Bold Jut Out", 10.7735844F, FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            DGAutores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            DGAutores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.Font = new Font("Simple Bold Jut Out", 10.18868F, FontStyle.Regular, GraphicsUnit.Point, 178);
-            dataGridViewCellStyle2.ForeColor = Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            DGAutores.DefaultCellStyle = dataGridViewCellStyle2;
-            DGAutores.Location = new Point(424, 173);
-            DGAutores.Name = "DGAutores";
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Simple Bold Jut Out", 10.7735844F, FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            DGAutores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            DGAutores.RowHeadersWidth = 45;
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            DGAutores.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            DGAutores.Size = new Size(536, 356);
-            DGAutores.TabIndex = 5;
-            DGAutores.CellMouseDoubleClick += Cargar_Autor_Seleccionado;
+            DGEditoriales.AccessibleRole = AccessibleRole.None;
+            DGEditoriales.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGEditoriales.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DGEditoriales.BackgroundColor = Color.PeachPuff;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = SystemColors.Control;
+            dataGridViewCellStyle5.Font = new Font("Simple Bold Jut Out", 10.7735844F, FontStyle.Bold);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            DGEditoriales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            DGEditoriales.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = SystemColors.HighlightText;
+            dataGridViewCellStyle6.Font = new Font("Simple Bold Jut Out", 10.18868F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            dataGridViewCellStyle6.ForeColor = Color.WhiteSmoke;
+            dataGridViewCellStyle6.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            DGEditoriales.DefaultCellStyle = dataGridViewCellStyle6;
+            DGEditoriales.Location = new Point(424, 173);
+            DGEditoriales.Name = "DGEditoriales";
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Control;
+            dataGridViewCellStyle7.Font = new Font("Simple Bold Jut Out", 10.7735844F, FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
+            DGEditoriales.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            DGEditoriales.RowHeadersWidth = 45;
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            DGEditoriales.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            DGEditoriales.Size = new Size(536, 356);
+            DGEditoriales.TabIndex = 5;
+            DGEditoriales.CellMouseDoubleClick += Cargar_Autor_Seleccionado;
             // 
             // BtnBotones
             // 
@@ -244,7 +219,7 @@
             BtnNuevo.UseVisualStyleBackColor = true;
             BtnNuevo.Click += BtnNuevo_Click;
             // 
-            // FormAutores
+            // FormEditoriales
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -252,14 +227,14 @@
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Name = "FormAutores";
+            Name = "FormEditoriales";
             Text = "FormAutores";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)DGAutores).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGEditoriales).EndInit();
             BtnBotones.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -272,14 +247,12 @@
         private Label LblGl;
         private TextBox textTitulo;
         private Label LblNombre;
-        private TextBox TXApellido;
         private TextBox TXNombre;
-        private Label LblApellido;
         private TextBox TXId;
         private Panel BtnBotones;
         private Button BtnCancelar;
         private Button BtnGuardar;
         private Button BtnNuevo;
-        private DataGridView DGAutores;
+        private DataGridView DGEditoriales;
     }
 }

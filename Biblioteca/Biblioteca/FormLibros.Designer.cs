@@ -69,7 +69,7 @@
             // 
             // Pnltitulo
             // 
-            Pnltitulo.BackColor = Color.DeepSkyBlue;
+            Pnltitulo.BackColor = Color.DarkGreen;
             Pnltitulo.Controls.Add(LblGl);
             Pnltitulo.Dock = DockStyle.Top;
             Pnltitulo.Location = new Point(0, 0);
@@ -81,16 +81,17 @@
             // LblGl
             // 
             LblGl.AutoSize = true;
-            LblGl.Location = new Point(523, 9);
+            LblGl.Font = new Font("Trebuchet MS", 27.8490562F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            LblGl.Location = new Point(496, 9);
             LblGl.Name = "LblGl";
-            LblGl.Size = new Size(359, 44);
+            LblGl.Size = new Size(397, 50);
             LblGl.TabIndex = 0;
             LblGl.Text = "GESTION DE LIBROS";
             LblGl.Click += label3_Click;
             // 
             // PnlBusqueda
             // 
-            PnlBusqueda.BackColor = Color.WhiteSmoke;
+            PnlBusqueda.BackColor = Color.MintCream;
             PnlBusqueda.Controls.Add(BtnBuscar);
             PnlBusqueda.Controls.Add(TxtBuscar);
             PnlBusqueda.Controls.Add(LblBusqueda);
@@ -103,7 +104,7 @@
             // BtnBuscar
             // 
             BtnBuscar.BackColor = Color.White;
-            BtnBuscar.Font = new Font("SimSun", 10.18868F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            BtnBuscar.Font = new Font("Tempus Sans ITC", 10.8679247F, FontStyle.Bold, GraphicsUnit.Point, 0);
             BtnBuscar.ForeColor = Color.Black;
             BtnBuscar.Location = new Point(940, 8);
             BtnBuscar.Name = "BtnBuscar";
@@ -115,11 +116,12 @@
             // 
             // TxtBuscar
             // 
-            TxtBuscar.Font = new Font("Showcard Gothic", 14.2641506F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TxtBuscar.Font = new Font("Palatino Linotype", 10.18868F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TxtBuscar.Location = new Point(445, 9);
             TxtBuscar.Name = "TxtBuscar";
-            TxtBuscar.Size = new Size(463, 33);
+            TxtBuscar.Size = new Size(463, 28);
             TxtBuscar.TabIndex = 1;
+            TxtBuscar.TextChanged += TxtBuscar_TextChanged;
             // 
             // LblBusqueda
             // 
@@ -129,12 +131,13 @@
             LblBusqueda.ForeColor = Color.Black;
             LblBusqueda.Location = new Point(346, 12);
             LblBusqueda.Name = "LblBusqueda";
-            LblBusqueda.Size = new Size(72, 27);
+            LblBusqueda.Size = new Size(87, 27);
             LblBusqueda.TabIndex = 0;
-            LblBusqueda.Text = "ISBN";
+            LblBusqueda.Text = "ISBN:";
             // 
             // PnlDatos
             // 
+            PnlDatos.BackColor = Color.White;
             PnlDatos.Controls.Add(CBEditorial);
             PnlDatos.Controls.Add(CBAutor);
             PnlDatos.Controls.Add(textTitulo);
@@ -152,23 +155,23 @@
             PnlDatos.Dock = DockStyle.Top;
             PnlDatos.Location = new Point(0, 129);
             PnlDatos.Name = "PnlDatos";
-            PnlDatos.Size = new Size(1344, 235);
+            PnlDatos.Size = new Size(1344, 305);
             PnlDatos.TabIndex = 2;
             // 
             // CBEditorial
             // 
-            CBEditorial.Font = new Font("Simple Bold Jut Out", 8.830189F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            CBEditorial.Font = new Font("Palatino Linotype", 8.830189F, FontStyle.Bold);
             CBEditorial.FormattingEnabled = true;
-            CBEditorial.Location = new Point(470, 89);
+            CBEditorial.Location = new Point(470, 136);
             CBEditorial.Name = "CBEditorial";
-            CBEditorial.Size = new Size(470, 27);
+            CBEditorial.Size = new Size(470, 26);
             CBEditorial.TabIndex = 17;
             // 
             // CBAutor
             // 
-            CBAutor.Font = new Font("Simple Bold Jut Out", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            CBAutor.Font = new Font("Palatino Linotype", 8.830189F, FontStyle.Bold);
             CBAutor.FormattingEnabled = true;
-            CBAutor.Location = new Point(470, 64);
+            CBAutor.Location = new Point(470, 103);
             CBAutor.Name = "CBAutor";
             CBAutor.Size = new Size(470, 26);
             CBAutor.TabIndex = 16;
@@ -176,8 +179,8 @@
             // textTitulo
             // 
             textTitulo.BorderStyle = BorderStyle.None;
-            textTitulo.Font = new Font("Simple Bold Jut Out", 8.150944F);
-            textTitulo.Location = new Point(470, 42);
+            textTitulo.Font = new Font("Palatino Linotype", 8.830189F, FontStyle.Bold);
+            textTitulo.Location = new Point(470, 66);
             textTitulo.Multiline = true;
             textTitulo.Name = "textTitulo";
             textTitulo.Size = new Size(470, 24);
@@ -186,11 +189,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Simple Indust Shaded", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            label2.Font = new Font("Verdana", 8.830189F, FontStyle.Italic);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(315, 18);
+            label2.Location = new Point(315, 41);
             label2.Name = "label2";
-            label2.Size = new Size(49, 24);
+            label2.Size = new Size(37, 16);
             label2.TabIndex = 13;
             label2.Text = "ISBN";
             label2.Click += label2_Click;
@@ -198,8 +201,8 @@
             // TextUnidades
             // 
             TextUnidades.BorderStyle = BorderStyle.None;
-            TextUnidades.Font = new Font("Simple Bold Jut Out", 8.150944F);
-            TextUnidades.Location = new Point(470, 162);
+            TextUnidades.Font = new Font("Palatino Linotype", 8.830189F, FontStyle.Bold);
+            TextUnidades.Location = new Point(470, 244);
             TextUnidades.Multiline = true;
             TextUnidades.Name = "TextUnidades";
             TextUnidades.Size = new Size(470, 24);
@@ -208,8 +211,8 @@
             // TextAnio
             // 
             TextAnio.BorderStyle = BorderStyle.None;
-            TextAnio.Font = new Font("Simple Bold Jut Out", 8.150944F);
-            TextAnio.Location = new Point(470, 138);
+            TextAnio.Font = new Font("Palatino Linotype", 8.830189F, FontStyle.Bold);
+            TextAnio.Location = new Point(470, 209);
             TextAnio.Multiline = true;
             TextAnio.Name = "TextAnio";
             TextAnio.Size = new Size(470, 24);
@@ -219,8 +222,8 @@
             // TextCategoria
             // 
             TextCategoria.BorderStyle = BorderStyle.None;
-            TextCategoria.Font = new Font("Simple Bold Jut Out", 8.150944F);
-            TextCategoria.Location = new Point(470, 114);
+            TextCategoria.Font = new Font("Palatino Linotype", 8.830189F, FontStyle.Bold);
+            TextCategoria.Location = new Point(470, 172);
             TextCategoria.Multiline = true;
             TextCategoria.Name = "TextCategoria";
             TextCategoria.Size = new Size(470, 24);
@@ -229,8 +232,8 @@
             // TextIsbn
             // 
             TextIsbn.BorderStyle = BorderStyle.None;
-            TextIsbn.Font = new Font("Simple Bold Jut Out", 8.150944F);
-            TextIsbn.Location = new Point(470, 18);
+            TextIsbn.Font = new Font("Palatino Linotype", 8.830189F, FontStyle.Bold);
+            TextIsbn.Location = new Point(470, 33);
             TextIsbn.Multiline = true;
             TextIsbn.Name = "TextIsbn";
             TextIsbn.Size = new Size(470, 24);
@@ -239,22 +242,22 @@
             // TxtUnidades
             // 
             TxtUnidades.AutoSize = true;
-            TxtUnidades.Font = new Font("Simple Indust Shaded", 8.150944F);
+            TxtUnidades.Font = new Font("Verdana", 8.830189F, FontStyle.Italic);
             TxtUnidades.ForeColor = Color.Black;
-            TxtUnidades.Location = new Point(315, 162);
+            TxtUnidades.Location = new Point(315, 252);
             TxtUnidades.Name = "TxtUnidades";
-            TxtUnidades.Size = new Size(97, 24);
+            TxtUnidades.Size = new Size(72, 16);
             TxtUnidades.TabIndex = 6;
             TxtUnidades.Text = "UNIDADES";
             // 
             // TxtAnio
             // 
             TxtAnio.AutoSize = true;
-            TxtAnio.Font = new Font("Simple Indust Shaded", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            TxtAnio.Font = new Font("Verdana", 8.830189F, FontStyle.Italic);
             TxtAnio.ForeColor = Color.Black;
-            TxtAnio.Location = new Point(315, 138);
+            TxtAnio.Location = new Point(315, 217);
             TxtAnio.Name = "TxtAnio";
-            TxtAnio.Size = new Size(46, 24);
+            TxtAnio.Size = new Size(34, 16);
             TxtAnio.TabIndex = 5;
             TxtAnio.Text = "AÑO";
             TxtAnio.Click += TxtAnio_Click;
@@ -262,64 +265,65 @@
             // TxtCategoria
             // 
             TxtCategoria.AutoSize = true;
-            TxtCategoria.Font = new Font("Simple Indust Shaded", 8.150944F);
+            TxtCategoria.Font = new Font("Verdana", 8.830189F, FontStyle.Italic);
             TxtCategoria.ForeColor = Color.Black;
-            TxtCategoria.Location = new Point(315, 114);
+            TxtCategoria.Location = new Point(315, 180);
             TxtCategoria.Name = "TxtCategoria";
-            TxtCategoria.Size = new Size(107, 24);
+            TxtCategoria.Size = new Size(81, 16);
             TxtCategoria.TabIndex = 4;
             TxtCategoria.Text = "CATEGORIA";
             // 
             // TxtEditorial
             // 
             TxtEditorial.AutoSize = true;
-            TxtEditorial.Font = new Font("Simple Indust Shaded", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            TxtEditorial.Font = new Font("Verdana", 8.830189F, FontStyle.Italic);
             TxtEditorial.ForeColor = Color.Black;
-            TxtEditorial.Location = new Point(315, 90);
+            TxtEditorial.Location = new Point(315, 146);
             TxtEditorial.Name = "TxtEditorial";
-            TxtEditorial.Size = new Size(98, 24);
+            TxtEditorial.Size = new Size(76, 16);
             TxtEditorial.TabIndex = 3;
             TxtEditorial.Text = "EDITORIAL";
             // 
             // TxtAutor
             // 
             TxtAutor.AutoSize = true;
-            TxtAutor.Font = new Font("Simple Indust Shaded", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            TxtAutor.Font = new Font("Verdana", 8.830189F, FontStyle.Italic);
             TxtAutor.ForeColor = Color.Black;
-            TxtAutor.Location = new Point(315, 66);
+            TxtAutor.Location = new Point(315, 113);
             TxtAutor.Name = "TxtAutor";
-            TxtAutor.Size = new Size(68, 24);
+            TxtAutor.Size = new Size(51, 16);
             TxtAutor.TabIndex = 1;
             TxtAutor.Text = "AUTOR";
             // 
             // LblTitulo
             // 
             LblTitulo.AutoSize = true;
-            LblTitulo.Font = new Font("Simple Indust Shaded", 8.150944F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            LblTitulo.Font = new Font("Verdana", 8.830189F, FontStyle.Italic);
             LblTitulo.ForeColor = Color.Black;
-            LblTitulo.Location = new Point(315, 42);
+            LblTitulo.Location = new Point(315, 74);
             LblTitulo.Name = "LblTitulo";
-            LblTitulo.Size = new Size(69, 24);
+            LblTitulo.Size = new Size(56, 16);
             LblTitulo.TabIndex = 0;
             LblTitulo.Text = "TITULO";
             // 
             // BtnBotones
             // 
-            BtnBotones.BackColor = Color.WhiteSmoke;
+            BtnBotones.BackColor = Color.MintCream;
             BtnBotones.Controls.Add(BtnCancelar);
             BtnBotones.Controls.Add(BtnEliminar);
             BtnBotones.Controls.Add(BtnEditar);
             BtnBotones.Controls.Add(BtnGuardar);
             BtnBotones.Controls.Add(BtnNuevo);
             BtnBotones.ForeColor = Color.LightGray;
-            BtnBotones.Location = new Point(409, 370);
+            BtnBotones.Location = new Point(399, 457);
             BtnBotones.Name = "BtnBotones";
             BtnBotones.Size = new Size(630, 65);
             BtnBotones.TabIndex = 3;
             // 
             // BtnCancelar
             // 
-            BtnCancelar.Font = new Font("Simple Bold Jut Out", 8.830189F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            BtnCancelar.FlatStyle = FlatStyle.System;
+            BtnCancelar.Font = new Font("Tempus Sans ITC", 8.830189F, FontStyle.Bold);
             BtnCancelar.ForeColor = Color.Black;
             BtnCancelar.Location = new Point(510, 18);
             BtnCancelar.Name = "BtnCancelar";
@@ -331,7 +335,8 @@
             // 
             // BtnEliminar
             // 
-            BtnEliminar.Font = new Font("Simple Bold Jut Out", 8.830189F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            BtnEliminar.FlatStyle = FlatStyle.System;
+            BtnEliminar.Font = new Font("Tempus Sans ITC", 8.830189F, FontStyle.Bold);
             BtnEliminar.ForeColor = Color.Black;
             BtnEliminar.Location = new Point(401, 17);
             BtnEliminar.Name = "BtnEliminar";
@@ -343,7 +348,8 @@
             // 
             // BtnEditar
             // 
-            BtnEditar.Font = new Font("Simple Bold Jut Out", 8.830189F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            BtnEditar.FlatStyle = FlatStyle.System;
+            BtnEditar.Font = new Font("Tempus Sans ITC", 8.830189F, FontStyle.Bold);
             BtnEditar.ForeColor = Color.Black;
             BtnEditar.Location = new Point(280, 18);
             BtnEditar.Name = "BtnEditar";
@@ -355,7 +361,8 @@
             // 
             // BtnGuardar
             // 
-            BtnGuardar.Font = new Font("Simple Bold Jut Out", 8.830189F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            BtnGuardar.FlatStyle = FlatStyle.System;
+            BtnGuardar.Font = new Font("Tempus Sans ITC", 8.830189F, FontStyle.Bold);
             BtnGuardar.ForeColor = Color.Black;
             BtnGuardar.Location = new Point(156, 18);
             BtnGuardar.Name = "BtnGuardar";
@@ -367,7 +374,8 @@
             // 
             // BtnNuevo
             // 
-            BtnNuevo.Font = new Font("Simple Bold Jut Out", 8.830189F, FontStyle.Regular, GraphicsUnit.Point, 178);
+            BtnNuevo.FlatStyle = FlatStyle.System;
+            BtnNuevo.Font = new Font("Tempus Sans ITC", 8.830189F, FontStyle.Bold);
             BtnNuevo.ForeColor = Color.Black;
             BtnNuevo.Location = new Point(36, 17);
             BtnNuevo.Name = "BtnNuevo";
@@ -382,7 +390,7 @@
             DgLibros.AccessibleRole = AccessibleRole.None;
             DgLibros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             DgLibros.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            DgLibros.BackgroundColor = Color.WhiteSmoke;
+            DgLibros.BackgroundColor = Color.PeachPuff;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Simple Bold Jut Out", 10.7735844F, FontStyle.Bold);
@@ -400,7 +408,7 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.ButtonHighlight;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             DgLibros.DefaultCellStyle = dataGridViewCellStyle2;
-            DgLibros.Location = new Point(211, 465);
+            DgLibros.Location = new Point(218, 563);
             DgLibros.Name = "DgLibros";
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = SystemColors.Control;
@@ -413,7 +421,7 @@
             DgLibros.RowHeadersWidth = 45;
             dataGridViewCellStyle4.ForeColor = Color.Black;
             DgLibros.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            DgLibros.Size = new Size(982, 250);
+            DgLibros.Size = new Size(960, 356);
             DgLibros.TabIndex = 4;
             DgLibros.CellContentClick += dataGridView1_CellContentClick;
             DgLibros.CellMouseDoubleClick += Cargar_Libro_Seleccionado;
@@ -422,7 +430,8 @@
             // 
             AutoScaleDimensions = new SizeF(106F, 106F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            ClientSize = new Size(1344, 727);
+            BackColor = Color.MintCream;
+            ClientSize = new Size(1344, 965);
             Controls.Add(DgLibros);
             Controls.Add(BtnBotones);
             Controls.Add(PnlDatos);

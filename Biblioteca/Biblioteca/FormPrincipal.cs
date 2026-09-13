@@ -53,5 +53,10 @@ namespace Biblioteca
         {
             Application.Exit();// Cierra la aplicación
         }
+
+        private void LblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

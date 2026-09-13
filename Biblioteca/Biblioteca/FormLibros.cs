@@ -463,7 +463,7 @@ namespace Biblioteca
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
                 );
-                
+
                 if (resultado == DialogResult.No)
                 {
                     return;
@@ -503,6 +503,11 @@ namespace Biblioteca
                     MessageBoxIcon.Error
                 );
             }
+        }
+
+        private void TxtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

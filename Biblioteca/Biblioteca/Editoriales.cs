@@ -11,15 +11,15 @@ using System.Windows.Forms;
 
 namespace Biblioteca
 {
-    public partial class FormAutores : Form
+    public partial class FormEditoriales : Form
     {
         private bool modoEdition = false;
-        public FormAutores()
+        public FormEditoriales()
         {
             InitializeComponent();
-            Cargar_Autores();
+            Cargar_Editoriales();
         }
-        private void Cargar_Autores()
+        private void Cargar_Editoriales()
         {
             try
             {
@@ -28,20 +28,20 @@ namespace Biblioteca
                 using (SqlConnection cn = conexion.ObtenerConexion())
                 {
                     cn.Open();
-                    string consulta = "SELECT * FROM AUTORES";
+                    string consulta = "SELECT * FROM EDITORIALES";
 
                     using (SqlDataAdapter adaptador = new SqlDataAdapter(consulta, cn))
                     {
                         DataTable tabla = new DataTable();
                         adaptador.Fill(tabla);
-                        DGAutores.DataSource = tabla;
+                        DGEditoriales.DataSource = tabla;
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Error al cargar los Autores:\n " + ex.Message,
+                    "Error al cargar las Editoriales:\n " + ex.Message,
                     "Biblioteca",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
@@ -52,7 +52,6 @@ namespace Biblioteca
         {
             TXId.Clear();
             TXNombre.Clear();
-            TXApellido.Clear();
 
             TXId.Focus();
         }
@@ -60,7 +59,7 @@ namespace Biblioteca
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(TXNombre.Text) || string.IsNullOrWhiteSpace(TXApellido.Text))
+                if (string.IsNullOrWhiteSpace(TXNombre.Text))
                 {
                     MessageBox.Show(
                         "Complete todos los campos antes de guardar.",
@@ -77,33 +76,32 @@ namespace Biblioteca
                 {
                     cn.Open();
 
-                    string consulta = "INSERT INTO AUTORES " +
-                        "(Nombre, Apellido) " +
+                    string consulta = "INSERT INTO EDITORIALES " +
+                        "(Nombre) " +
                         "VALUES " +
-                        "(@Nombre, @Apellido)";
+                        "(@Nombre)";
                     using (SqlCommand comando = new SqlCommand(consulta, cn))
                     {
                         comando.Parameters.AddWithValue("@Nombre", TXNombre.Text.Trim());
-                        comando.Parameters.AddWithValue("@Apellido", TXApellido.Text.Trim());
                         comando.ExecuteNonQuery();
                     }
                 }
 
                 MessageBox.Show(
-                    "Autor guardado correctamente.",
+                    "Editorial guardada correctamente.",
                     "Biblioteca",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information
                 );
 
-                Cargar_Autores();
+                Cargar_Editoriales();
 
                 BtnNuevo_Click(null, null);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Error al guardar el autor:\n " + ex.Message,
+                    "Error al guardar la editorial:\n " + ex.Message,
                     "Biblioteca",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error
@@ -114,21 +112,25 @@ namespace Biblioteca
         {
             TXId.Clear();
             TXNombre.Clear();
-            TXApellido.Clear(); 
 
             modoEdition = false;
 
         }
-        private void Cargar_Autor_Seleccionado  (object sender, DataGridViewCellMouseEventArgs e)
+        private void Cargar_Autor_Seleccionado(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (DGAutores.CurrentRow == null)
+            if (DGEditoriales.CurrentRow == null)
                 return;
-            TXId.Text = DGAutores.CurrentRow.Cells["Id"].Value.ToString();
-            TXNombre.Text = DGAutores.CurrentRow.Cells["Nombre"].Value.ToString();
-            TXApellido.Text = DGAutores.CurrentRow.Cells["Apellido"].Value.ToString();
-            
+            TXId.Text = DGEditoriales.CurrentRow.Cells["Id"].Value.ToString();
+            TXNombre.Text = DGEditoriales.CurrentRow.Cells["Nombre"].Value.ToString();
+
+
         }
         private void TXApellido_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblGl_Click(object sender, EventArgs e)
         {
 
         }

@@ -52,7 +52,7 @@
             // 
             // PnlMenu
             // 
-            PnlMenu.BackColor = Color.White;
+            PnlMenu.BackColor = Color.PeachPuff;
             PnlMenu.Controls.Add(BtnSalida);
             PnlMenu.Controls.Add(BtnReportes);
             PnlMenu.Controls.Add(BtnPrestamos);
@@ -65,17 +65,18 @@
             PnlMenu.Dock = DockStyle.Left;
             PnlMenu.Location = new Point(0, 0);
             PnlMenu.Name = "PnlMenu";
-            PnlMenu.Size = new Size(229, 450);
+            PnlMenu.Size = new Size(454, 965);
             PnlMenu.TabIndex = 0;
             // 
             // BtnSalida
             // 
-            BtnSalida.Dock = DockStyle.Top;
+            BtnSalida.Cursor = Cursors.Hand;
             BtnSalida.FlatAppearance.BorderSize = 0;
             BtnSalida.FlatStyle = FlatStyle.Flat;
-            BtnSalida.Location = new Point(0, 400);
+            BtnSalida.Font = new Font("Unispace", 27.8490543F, FontStyle.Bold | FontStyle.Italic);
+            BtnSalida.Location = new Point(3, 831);
             BtnSalida.Name = "BtnSalida";
-            BtnSalida.Size = new Size(229, 50);
+            BtnSalida.Size = new Size(454, 59);
             BtnSalida.TabIndex = 10;
             BtnSalida.Text = "SALIDA";
             BtnSalida.UseVisualStyleBackColor = true;
@@ -83,12 +84,13 @@
             // 
             // BtnReportes
             // 
-            BtnReportes.Dock = DockStyle.Top;
+            BtnReportes.Cursor = Cursors.Hand;
             BtnReportes.FlatAppearance.BorderSize = 0;
             BtnReportes.FlatStyle = FlatStyle.Flat;
-            BtnReportes.Location = new Point(0, 360);
+            BtnReportes.Font = new Font("Unispace", 27.8490543F, FontStyle.Bold | FontStyle.Italic);
+            BtnReportes.Location = new Point(0, 743);
             BtnReportes.Name = "BtnReportes";
-            BtnReportes.Size = new Size(229, 40);
+            BtnReportes.Size = new Size(454, 59);
             BtnReportes.TabIndex = 9;
             BtnReportes.Text = "REPORTES";
             BtnReportes.UseVisualStyleBackColor = true;
@@ -96,12 +98,13 @@
             // 
             // BtnPrestamos
             // 
-            BtnPrestamos.Dock = DockStyle.Top;
+            BtnPrestamos.Cursor = Cursors.Hand;
             BtnPrestamos.FlatAppearance.BorderSize = 0;
             BtnPrestamos.FlatStyle = FlatStyle.Flat;
-            BtnPrestamos.Location = new Point(0, 320);
+            BtnPrestamos.Font = new Font("Unispace", 27.8490543F, FontStyle.Bold | FontStyle.Italic);
+            BtnPrestamos.Location = new Point(3, 653);
             BtnPrestamos.Name = "BtnPrestamos";
-            BtnPrestamos.Size = new Size(229, 40);
+            BtnPrestamos.Size = new Size(454, 59);
             BtnPrestamos.TabIndex = 8;
             BtnPrestamos.Text = "PRESTAMOS";
             BtnPrestamos.UseVisualStyleBackColor = true;
@@ -109,12 +112,13 @@
             // 
             // BtnEditoriales
             // 
-            BtnEditoriales.Dock = DockStyle.Top;
+            BtnEditoriales.Cursor = Cursors.Hand;
             BtnEditoriales.FlatAppearance.BorderSize = 0;
             BtnEditoriales.FlatStyle = FlatStyle.Flat;
-            BtnEditoriales.Location = new Point(0, 280);
+            BtnEditoriales.Font = new Font("Unispace", 27.8490543F, FontStyle.Bold | FontStyle.Italic);
+            BtnEditoriales.Location = new Point(3, 563);
             BtnEditoriales.Name = "BtnEditoriales";
-            BtnEditoriales.Size = new Size(229, 40);
+            BtnEditoriales.Size = new Size(454, 59);
             BtnEditoriales.TabIndex = 7;
             BtnEditoriales.Text = "EDITORIALES";
             BtnEditoriales.UseVisualStyleBackColor = true;
@@ -122,12 +126,13 @@
             // 
             // BtnAutores
             // 
-            BtnAutores.Dock = DockStyle.Top;
+            BtnAutores.Cursor = Cursors.Hand;
             BtnAutores.FlatAppearance.BorderSize = 0;
             BtnAutores.FlatStyle = FlatStyle.Flat;
-            BtnAutores.Location = new Point(0, 240);
+            BtnAutores.Font = new Font("Unispace", 27.8490543F, FontStyle.Bold | FontStyle.Italic);
+            BtnAutores.Location = new Point(3, 470);
             BtnAutores.Name = "BtnAutores";
-            BtnAutores.Size = new Size(229, 40);
+            BtnAutores.Size = new Size(454, 59);
             BtnAutores.TabIndex = 6;
             BtnAutores.Text = "AUTORES";
             BtnAutores.UseVisualStyleBackColor = true;
@@ -135,12 +140,13 @@
             // 
             // BtnUsuario
             // 
-            BtnUsuario.Dock = DockStyle.Top;
+            BtnUsuario.Cursor = Cursors.Hand;
             BtnUsuario.FlatAppearance.BorderSize = 0;
             BtnUsuario.FlatStyle = FlatStyle.Flat;
-            BtnUsuario.Location = new Point(0, 200);
+            BtnUsuario.Font = new Font("Unispace", 27.8490543F, FontStyle.Bold | FontStyle.Italic);
+            BtnUsuario.Location = new Point(3, 389);
             BtnUsuario.Name = "BtnUsuario";
-            BtnUsuario.Size = new Size(229, 40);
+            BtnUsuario.Size = new Size(454, 59);
             BtnUsuario.TabIndex = 5;
             BtnUsuario.Text = "USUARIOS";
             BtnUsuario.UseVisualStyleBackColor = true;
@@ -148,12 +154,13 @@
             // 
             // BtnLibros
             // 
-            BtnLibros.Dock = DockStyle.Top;
+            BtnLibros.Cursor = Cursors.Hand;
             BtnLibros.FlatAppearance.BorderSize = 0;
             BtnLibros.FlatStyle = FlatStyle.Flat;
-            BtnLibros.Location = new Point(0, 160);
+            BtnLibros.Font = new Font("Unispace", 27.8490543F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            BtnLibros.Location = new Point(0, 307);
             BtnLibros.Name = "BtnLibros";
-            BtnLibros.Size = new Size(229, 40);
+            BtnLibros.Size = new Size(454, 59);
             BtnLibros.TabIndex = 4;
             BtnLibros.Text = "LIBROS";
             BtnLibros.UseVisualStyleBackColor = true;
@@ -162,14 +169,15 @@
             // BtnInicio
             // 
             BtnInicio.AutoSize = true;
-            BtnInicio.Dock = DockStyle.Top;
+            BtnInicio.Cursor = Cursors.Hand;
             BtnInicio.FlatAppearance.BorderSize = 0;
             BtnInicio.FlatStyle = FlatStyle.Flat;
+            BtnInicio.Font = new Font("Unispace", 27.8490543F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             BtnInicio.ForeColor = SystemColors.ControlText;
-            BtnInicio.Location = new Point(0, 120);
+            BtnInicio.Location = new Point(0, 234);
             BtnInicio.Margin = new Padding(10, 0, 10, 0);
             BtnInicio.Name = "BtnInicio";
-            BtnInicio.Size = new Size(229, 40);
+            BtnInicio.Size = new Size(454, 59);
             BtnInicio.TabIndex = 3;
             BtnInicio.Text = "INICIO";
             BtnInicio.UseVisualStyleBackColor = true;
@@ -177,14 +185,14 @@
             // 
             // PnlLogo
             // 
-            PnlLogo.BackColor = Color.MidnightBlue;
+            PnlLogo.BackColor = Color.DarkGreen;
             PnlLogo.Controls.Add(pictureLogo);
             PnlLogo.Controls.Add(LblSubtitulo);
             PnlLogo.Controls.Add(LblTitulo);
             PnlLogo.Dock = DockStyle.Top;
             PnlLogo.Location = new Point(0, 0);
             PnlLogo.Name = "PnlLogo";
-            PnlLogo.Size = new Size(229, 120);
+            PnlLogo.Size = new Size(454, 234);
             PnlLogo.TabIndex = 0;
             // 
             // pictureLogo
@@ -193,9 +201,9 @@
             pictureLogo.Image = (Image)resources.GetObject("pictureLogo.Image");
             pictureLogo.ImageLocation = "";
             pictureLogo.InitialImage = null;
-            pictureLogo.Location = new Point(123, 47);
+            pictureLogo.Location = new Point(314, 12);
             pictureLogo.Name = "pictureLogo";
-            pictureLogo.Size = new Size(74, 62);
+            pictureLogo.Size = new Size(118, 198);
             pictureLogo.SizeMode = PictureBoxSizeMode.Zoom;
             pictureLogo.TabIndex = 2;
             pictureLogo.TabStop = false;
@@ -205,11 +213,11 @@
             // LblSubtitulo
             // 
             LblSubtitulo.AutoSize = true;
-            LblSubtitulo.Font = new Font("Segoe UI", 8.830189F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LblSubtitulo.Font = new Font("Segoe UI", 12.2264156F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LblSubtitulo.ForeColor = Color.WhiteSmoke;
-            LblSubtitulo.Location = new Point(3, 44);
+            LblSubtitulo.Location = new Point(12, 145);
             LblSubtitulo.Name = "LblSubtitulo";
-            LblSubtitulo.Size = new Size(114, 17);
+            LblSubtitulo.Size = new Size(156, 25);
             LblSubtitulo.TabIndex = 1;
             LblSubtitulo.Text = "Sietma de Gestion";
             // 
@@ -217,46 +225,49 @@
             // 
             LblTitulo.AutoSize = true;
             LblTitulo.BackColor = Color.Transparent;
-            LblTitulo.Font = new Font("Snap ITC", 18.3396225F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblTitulo.Font = new Font("Trebuchet MS", 36F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             LblTitulo.ForeColor = Color.White;
-            LblTitulo.Location = new Point(0, 9);
+            LblTitulo.Location = new Point(3, 79);
+            LblTitulo.Margin = new Padding(3, 0, 3, 5);
             LblTitulo.Name = "LblTitulo";
-            LblTitulo.Size = new Size(226, 35);
+            LblTitulo.Size = new Size(317, 66);
             LblTitulo.TabIndex = 0;
             LblTitulo.Text = "BIBLIOTECA";
+            LblTitulo.Click += LblTitulo_Click;
             // 
             // PnlSuperior
             // 
-            PnlSuperior.BackColor = Color.LightCyan;
+            PnlSuperior.BackColor = Color.MintCream;
             PnlSuperior.Dock = DockStyle.Top;
-            PnlSuperior.Location = new Point(229, 0);
+            PnlSuperior.Location = new Point(454, 0);
             PnlSuperior.Name = "PnlSuperior";
-            PnlSuperior.Size = new Size(571, 70);
+            PnlSuperior.Size = new Size(896, 70);
             PnlSuperior.TabIndex = 1;
             // 
             // PnlEstado
             // 
             PnlEstado.BackColor = Color.Silver;
             PnlEstado.Dock = DockStyle.Bottom;
-            PnlEstado.Location = new Point(229, 410);
+            PnlEstado.Location = new Point(454, 925);
             PnlEstado.Name = "PnlEstado";
-            PnlEstado.Size = new Size(571, 40);
+            PnlEstado.Size = new Size(896, 40);
             PnlEstado.TabIndex = 2;
             // 
             // PnlContenido
             // 
-            PnlContenido.BackColor = Color.WhiteSmoke;
+            PnlContenido.BackColor = Color.White;
+            PnlContenido.BorderStyle = BorderStyle.Fixed3D;
             PnlContenido.Dock = DockStyle.Fill;
-            PnlContenido.Location = new Point(229, 70);
+            PnlContenido.Location = new Point(454, 70);
             PnlContenido.Name = "PnlContenido";
-            PnlContenido.Size = new Size(571, 340);
+            PnlContenido.Size = new Size(896, 855);
             PnlContenido.TabIndex = 3;
             // 
             // FormPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1350, 965);
             Controls.Add(PnlContenido);
             Controls.Add(PnlEstado);
             Controls.Add(PnlSuperior);
